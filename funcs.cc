@@ -66,7 +66,14 @@ double perimeter(double x1, double y1, double x2, double y2, double x3, double y
 double perimeter(double x1, double y1,
 								 double x2, double y2,
 								 double x3, double y3,
-								 double x4, double y4);
+								 double x4, double y4); //Irakli Okruashvili
+{
+	double side1 = sqrt((x2-x1)^2+(y2-y1)^2);
+	double side2 = sqrt((x3-x2)^2+(y3-y2)^2);
+	double side3 = sqrt((x4-x3)^2+(y4-y3)^2);
+	double side4 = sqrt((x1-x4)^2+(y1-y4)^2);
+	return (side1+side2+side3+side4);
+}
 
 double dot(double v1x, double v1y, double v1z,
 					 double v2x, double v2y, double v2z);
@@ -96,8 +103,13 @@ double grav(double m1, Vec3d v1, double m2, Vec3d v2);
 
 
 // array problems
-double mean(int x[], int n);
-
+double mean(int x[], int n); //Irakli Okruashvili
+{
+	double sum;
+	for(int i = 0; i < n; i++)
+		sum += x[i];
+	return sum / n;
+}
 
 int min(int x[], int n)
 {
