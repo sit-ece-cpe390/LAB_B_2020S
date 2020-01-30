@@ -1,3 +1,4 @@
+
 e/*
 	Lab1 Team Programming 
 	Author: Dov Kruger
@@ -46,7 +47,17 @@ uint32_t countPrimes(uint32_t a, uint32_t b){
     }
     return count;
 }
-bool isPrime(uint32_t p);
+bool isPrime(uint32_t p)
+{
+    int x;
+    int flag=0;
+    for(x=2;x<y;x++){
+        if(p%x==0){
+            flag=1;
+        }
+    }
+return flag;
+}
 void swap(uint32_t& a, uint32_t& b);
 uint32_t gcd(uint32_t a, uint32_t b);
 
@@ -261,7 +272,12 @@ uint32_t strip(double x[], uint32_t n, double a, double b) {
 void reverse(int x[], int n);
 uint32_t randomElement(const int x[], int n);
 uint32_t countEvens(const int x[], int n);
-void addToEach(int x[], int n, int delta);
+void addToEach(int x[], int n, int delta)
+{
+    for (int i=0;i<=n-1;i++){
+        x[i]+=delta;
+    }
+}
 
 //Brianna Garland: Checks every index and if it is an uppercase or lowercase vowel it replaces it 
 void removeVowels(char s[])
