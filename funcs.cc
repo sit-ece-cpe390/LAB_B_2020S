@@ -30,7 +30,15 @@ double trigIdentity(double x);
 */
 void quadraticEquation(double a, double b, double c, double& x1, double& x2);
 
-double area(double x1, double y1, double x2, double y2, double x3, double y3);
+double area(double x1, double y1, double x2, double y2, double x3, double y3)
+{
+	double area = ((x2 - x1)*(y3 - y1) - (x3 - x1) * (y2 - y1))/2.0;
+	if (area < 0 )
+		area = area * -1;
+	return area;
+}
+
+
 double area(double x1, double y1,
 						double x2, double y2,
 						double x3, double y3,
