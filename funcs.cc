@@ -14,7 +14,9 @@ uint32_t sum(uint32_t a, uint32_t b) { //Returns the sum of two ints
     return a + b; //Adds the two integers
 }
 
-uint64_t prod(uint32_t a, uint32_t b);
+uint64_t prod(uint32_t a, uint32_t b){ // Elizabeth Cone
+	return a*b;
+}
 uint32_t sumsq(uint32_t a, uint32_t b);
 uint32_t countPrimes(uint32_t a, uint32_t b){
     uint32_t count=0;
@@ -39,7 +41,12 @@ uint32_t countPrimes(uint32_t a, uint32_t b){
 bool isPrime(uint32_t p);
 void swap(uint32_t& a, uint32_t& b);
 uint32_t gcd(uint32_t a, uint32_t b);
-uint32_t lcm(uint32_t a, uint32_t b);
+
+
+
+uint32_t lcm(uint32_t a, uint32_t b) {
+	return (a*b)/gcd(a,b);
+}
 
 double fact(uint32_t n);
 
@@ -203,24 +210,55 @@ void squareRoot(double x[], int n)
 		x[i]=sqrt(x[i]);
 	}
 }
-uint32_t strip(double x[], uint32_t n, double a, double b);
+
+
+uint32_t strip(double x[], uint32_t n, double a, double b) {
+	for (int i = 0; i < n; i++){
+		if (x[i] > a || x[i] < b) {
+			for (int j=i; j,(n-1);j++){
+				x[j]=x[j+1];
+			}
+		n++;
+		break;
+	}
+	return sizeof(x[])/sizeof(x[0];
+}	
+}
+
 void reverse(int x[], int n);
 uint32_t randomElement(const int x[], int n);
 uint32_t countEvens(const int x[], int n);
 void addToEach(int x[], int n, int delta);
 
 void removeVowels(char s[]);
-void reverse(char s[]);
+
+void reverse(char s[]){ // Elizabeth Cone
+	int len;
+	for (len = 0; s[len] != '\0'; len++)
+		;
+	int j = len-1;
+	for (int i = 0; i < j; i++, j--){
+		char temp = s[i];
+		s[i] = s[j];
+		s[j] = temp;
+	}
+}
 
 bool isPalindrome(const char s[]) { //Determine if an array of characters is a palindrome
     int len;
-    for (len = 0; s[len] != '\0'; len++) {  //Find the length of the array
+    char *str = (char*)malloc(256); //New array for once whitespaces are removed
+    for (int i = 0; s[i] != '\0'; i++) {    //Traverse array to find length and remove whitespace characters
+        if(s[i]!=' '){
+            str[len]=s[i];
+            len++;
+        }
     }
+    str[len]='\0';
     int start = 0;
     int end = len - 1;
     bool isPalindrome = true;
     while (start < end && isPalindrome) {   //Continue until each character has been compared or it is not palindromic
-        if (s[start] == s[end]) {   //Still palindromic, continue traversal
+        if (str[start] == str[end]) {   //Still palindromic, continue traversal
             start++;
             end--;
         }
@@ -228,6 +266,7 @@ bool isPalindrome(const char s[]) { //Determine if an array of characters is a p
             isPalindrome = false;
         }
     }
+    free(str);
     return isPalindrome;
 }
 
