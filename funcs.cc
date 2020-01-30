@@ -189,7 +189,21 @@ void squareRoot(double x[], int n)
 		x[i]=sqrt(x[i]);
 	}
 }
-uint32_t strip(double x[], uint32_t n, double a, double b);
+
+
+uint32_t strip(double x[], uint32_t n, double a, double b) {
+	for (int i = 0; i < n; i++){
+		if (x[i] > a || x[i] < b) {
+			for (int j=i; j,(n-1);j++){
+				x[j]=x[j+1];
+			}
+		n++;
+		break;
+	}
+	return sizeof(x[])/sizeof(x[0];
+}	
+}
+
 void reverse(int x[], int n);
 uint32_t randomElement(const int x[], int n);
 uint32_t countEvens(const int x[], int n);
