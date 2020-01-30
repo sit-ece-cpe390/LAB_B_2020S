@@ -43,6 +43,13 @@ double fact(uint32_t n)
 	return n*fact(n-1);
 }
 uint64_t sum(uint32_t n);
+<<<<<<< HEAD
+double hypot(double a, double b){
+	double c = squareRoot(a^2+b^2);
+	return c;
+}
+double diffsq(double a, double b);
+=======
 
 double hypot(double a, double b);
 double diffsq(double a, double b) {
@@ -54,6 +61,7 @@ double diffsq(double a, double b) {
 	diffsq = squarea - squareb;
 	return diffsq;
 }
+>>>>>>> e0392f3e6248405ed1612ffa217bb1e032dc1655
 double mean(int a, int b);
 double mean(int a, int b, int c);
 bool pythagoreantriple(double a, double b);
@@ -147,6 +155,17 @@ int max(int x[], int n)
 double prod(int x[], int n);
 int sum(int x[], int n);
 void demean(double x[], int n);
+<<<<<<< HEAD
+void normalize(double x[], int n);
+void round(double x[], int n){
+	for(int i=0;i<n;i++){
+		int j=x[i]+.5;
+		x[i]=j;
+	}
+}
+void square(double x[], int n);
+void squareRoot(double x[], int n);
+=======
 void normalize(double x[], int n) {
 	for (int i = 0, i < n, i++) {
 		double dm = demean(x[i], n);
@@ -172,6 +191,7 @@ void squareRoot(double x[], int n)
 		x[i]=sqrt(x[i]);
 	}
 }
+>>>>>>> e0392f3e6248405ed1612ffa217bb1e032dc1655
 uint32_t strip(double x[], uint32_t n, double a, double b);
 void reverse(int x[], int n);
 uint32_t randomElement(const int x[], int n);
