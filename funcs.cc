@@ -15,7 +15,9 @@ uint32_t countPrimes(uint32_t a, uint32_t b);
 bool isPrime(uint32_t p);
 void swap(uint32_t& a, uint32_t& b);
 uint32_t gcd(uint32_t a, uint32_t b);
-uint32_t lcm(uint32_t a, uint32_t b);
+uint32_t lcm(uint32_t a, uint32_t b) {
+	return (a*b)/gcd(a,b);
+}
 double fact(uint32_t n);
 uint64_t sum(uint32_t n);
 double hypot(double a, double b);
@@ -74,7 +76,9 @@ void normalize(double x[], int n);
 void round(double x[], int n);
 void square(double x[], int n);
 void squareRoot(double x[], int n);
-uint32_t strip(double x[], uint32_t n, double a, double b);
+uint32_t strip(double x[], uint32_t n, double a, double b) {
+	
+}
 void reverse(int x[], int n);
 uint32_t randomElement(const int x[], int n);
 uint32_t countEvens(const int x[], int n);
