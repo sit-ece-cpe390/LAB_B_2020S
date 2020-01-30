@@ -119,7 +119,6 @@ int max(int x[], int n)
 
     return m;
 }
-int min(int x[], int n);
 
 double prod(int x[], int n);
 int sum(int x[], int n);
