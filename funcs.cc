@@ -22,7 +22,7 @@ bool isPrime(uint32_t p);
 void swap(uint32_t& a, uint32_t& b);
 uint32_t gcd(uint32_t a, uint32_t b);
 uint32_t lcm(uint32_t a, uint32_t b);
-<<<<<<< HEAD
+
 double fact(uint32_t n);
 
 uint64_t sum(uint32_t n)
@@ -37,14 +37,14 @@ uint64_t sum(uint32_t n)
 }
 	
 
-=======
+
 double fact(uint32_t n)
 {
 	if(n<2)return 1;
 	return n*fact(n-1);
 }
 uint64_t sum(uint32_t n);
->>>>>>> feb034abc61ebb3e448fd1a81a9aa4c7fe68c3b1
+
 double hypot(double a, double b);
 double diffsq(double a, double b);
 double mean(int a, int b);
