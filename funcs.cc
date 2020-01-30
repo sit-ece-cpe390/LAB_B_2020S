@@ -7,8 +7,14 @@
 */
 #include <iostream>
 #include <cstdint>
+#include <math.h>
 using namespace std;
-uint32_t sum(uint32_t a, uint32_t b);
+uint32_t sum(uint32_t a, uint32_t b); //E.J. Hannah
+
+uint32_t sum(uint32_t a, uint32_t b) { //Returns the sum of two ints
+    return a + b; //Adds the two integers
+}
+
 uint64_t prod(uint32_t a, uint32_t b);
 uint32_t sumsq(uint32_t a, uint32_t b);
 uint32_t countPrimes(uint32_t a, uint32_t b);
@@ -16,6 +22,7 @@ bool isPrime(uint32_t p);
 void swap(uint32_t& a, uint32_t& b);
 uint32_t gcd(uint32_t a, uint32_t b);
 uint32_t lcm(uint32_t a, uint32_t b);
+<<<<<<< HEAD
 double fact(uint32_t n);
 
 uint64_t sum(uint32_t n)
@@ -30,6 +37,14 @@ uint64_t sum(uint32_t n)
 }
 	
 
+=======
+double fact(uint32_t n)
+{
+	if(n<2)return 1;
+	return n*fact(n-1);
+}
+uint64_t sum(uint32_t n);
+>>>>>>> feb034abc61ebb3e448fd1a81a9aa4c7fe68c3b1
 double hypot(double a, double b);
 double diffsq(double a, double b);
 double mean(int a, int b);
@@ -42,11 +57,27 @@ double trigIdentity(double x);
 */
 void quadraticEquation(double a, double b, double c, double& x1, double& x2);
 
-double area(double x1, double y1, double x2, double y2, double x3, double y3);
+double area(double x1, double y1, double x2, double y2, double x3, double y3)
+{
+	double area = ((x2 - x1)*(y3 - y1) - (x3 - x1) * (y2 - y1))/2.0;
+	if (area < 0 )
+		area = area * -1;
+	return area;
+}
 double area(double x1, double y1,
 						double x2, double y2,
 						double x3, double y3,
 						double x4, double y4);
+double area(double x1, double y1,
+						double x2, double y2,
+						double x3, double y3,
+						double x4, double y4)
+{
+     double area = (  (x1 * y2 - x2 * y1) + (x2 * y3 - x3 * y2) + (x3 * y4 - x4 * y3) + (x4 * y1 - x1 * y4)  ) / 2;
+     if (area < 0)
+	area *= -1;
+     return area;
+}
 double perimeter(double x1, double y1, double x2, double y2, double x3, double y3);
 
 double perimeter(double x1, double y1,
@@ -70,20 +101,48 @@ public:
 
 double dot(Vec3d v1, Vec3d v2);
 
-Vec3d cross(Vec3d v1, Vec3d v2);
+Vec3d cross(Vec3d v1, Vec3d v2)
+{
+	Vec3d res(v1.y*v2.z-v1.z*v2.y,
+		  v1.z*v2.x-v1.x*v2.z,
+		  v1.x*v2.y-v1.y*v2.x);
+	return res;
+}
 
 double grav(double m1, Vec3d v1, double m2, Vec3d v2);
 
 
 // array problems
 double mean(int x[], int n);
+
+
+int min(int x[], int n)
+{
+	if (n == 0) return -1;
+	int min = x[0];
+	for (int i = 0; i < n; i++)
+		if (x[i] < min)
+			min = x[i];
+	return min;
+}
+
 int max(int x[], int n);
-int min(int x[], int n);
+int max(int x[], int n)
+{
+    int m = x[0];
+    for (int i = 0; i < n; i++)
+        if(x[i] > m)
+            m = x[i];
+
+    return m;
+}
+
 double prod(int x[], int n);
 int sum(int x[], int n);
 void demean(double x[], int n);
 void normalize(double x[], int n);
 void round(double x[], int n);
+<<<<<<< HEAD
 
 void square(double x[], int n)
 {
@@ -96,6 +155,16 @@ void square(double x[], int n)
 }
 
 void squareRoot(double x[], int n);
+=======
+void square(double x[], int n);
+void squareRoot(double x[], int n)
+{
+	for(int i=0;i<n;i++)
+	{
+		x[i]=sqrt(x[i]);
+	}
+}
+>>>>>>> feb034abc61ebb3e448fd1a81a9aa4c7fe68c3b1
 uint32_t strip(double x[], uint32_t n, double a, double b);
 void reverse(int x[], int n);
 uint32_t randomElement(const int x[], int n);
@@ -104,8 +173,37 @@ void addToEach(int x[], int n, int delta);
 
 void removeVowels(char s[]);
 void reverse(char s[]);
-bool isPalindrome(const char s[]);
-uint32_t checksum(const char s[]);
+bool isPalindrome(const char s[]); //E.J. Hannah
+
+bool isPalindrome(const char s[]) { //Determine if an array of characters is a palindrome
+    int start = 0;  //Flag the beginning
+    int end = sizeof(s) - 2;    //And end of the array
+    bool isPalindrome = true;
+    while (start < end && isPalindrome) {   //Continue until each character has been compared or it is not palindromic
+        if (s[start] == s[end]) {   //Still palindromic, continue traversal
+            start++;
+            end--;
+        }
+        else {  //Not a palindrome
+            isPalindrome = false;
+        }
+    }
+    return isPalindrome;
+}
+
+uint32_t checksum(const char s[])
+{
+	signed char sum=0;
+	for(int i=0;s[i]!='\0';i++)
+	{
+		sum+=s[i];
+	}
+	if(sum<0)
+	{
+		sum+=128;
+	}
+	return sum;
+}
 uint32_t myhash(const char s[]);
 void lowercase(char s[]);
 
