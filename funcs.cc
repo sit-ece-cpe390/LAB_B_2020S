@@ -47,14 +47,19 @@ double area(double x1, double y1, double x2, double y2, double x3, double y3)
 		area = area * -1;
 	return area;
 }
-
-
+double area(double x1, double y1,
+						double x2, double y2,
+						double x3, double y3,
+						double x4, double y4);
 double area(double x1, double y1,
 						double x2, double y2,
 						double x3, double y3,
 						double x4, double y4)
 {
-     return (  (x1 * y2 - x2 * y1) + (x2 * y3 - x3 * y2) + (x3 * y4 - x4 * y3) + (x4 * y1 - x1 * y4)  ) / 2;
+     double area = (  (x1 * y2 - x2 * y1) + (x2 * y3 - x3 * y2) + (x3 * y4 - x4 * y3) + (x4 * y1 - x1 * y4)  ) / 2;
+     if (area < 0)
+	area *= -1;
+     return area;
 }
 double perimeter(double x1, double y1, double x2, double y2, double x3, double y3);
 
@@ -93,7 +98,6 @@ double grav(double m1, Vec3d v1, double m2, Vec3d v2);
 // array problems
 double mean(int x[], int n);
 
-int max(int x[], int n);
 
 int min(int x[], int n)
 {
@@ -105,7 +109,7 @@ int min(int x[], int n)
 	return min;
 }
 
-
+int max(int x[], int n);
 int max(int x[], int n)
 {
     int m = x[0];
