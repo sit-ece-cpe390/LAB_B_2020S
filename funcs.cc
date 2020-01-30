@@ -58,7 +58,13 @@ bool isPrime(uint32_t p)
     }
 return flag;
 }
-void swap(uint32_t& a, uint32_t& b);
+void swap() { //matt gaughan
+	int a = 2, b = 3, c;
+	cout << "Before swapping, a = " << a << " and b = " << b << endl;
+	c = a;
+	a = b;
+	b = c;
+}
 uint32_t gcd(uint32_t a, uint32_t b);
 
 
@@ -245,7 +251,10 @@ uint32_t strip(double x[], uint32_t n, double a, double b) {
 }
 
 void reverse(int x[], int n);
-uint32_t randomElement(const int x[], int n);
+uint32_t randomElement(int element[], int n) { //matt gaughan
+		int random = rand() % (n-1);
+		return element[random];
+	}
 uint32_t countEvens(const int x[], int n);
 void addToEach(int x[], int n, int delta)
 {
