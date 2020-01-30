@@ -211,13 +211,19 @@ void reverse(char s[]){ // Elizabeth Cone
 
 bool isPalindrome(const char s[]) { //Determine if an array of characters is a palindrome
     int len;
-    for (len = 0; s[len] != '\0'; len++) {  //Find the length of the array
+    char *str = (char*)malloc(256); //New array for once whitespaces are removed
+    for (int i = 0; s[i] != '\0'; i++) {    //Traverse array to find length and remove whitespace characters
+        if(s[i]!=' '){
+            str[len]=s[i];
+            len++;
+        }
     }
+    str[len]='\0';
     int start = 0;
     int end = len - 1;
     bool isPalindrome = true;
     while (start < end && isPalindrome) {   //Continue until each character has been compared or it is not palindromic
-        if (s[start] == s[end]) {   //Still palindromic, continue traversal
+        if (str[start] == str[end]) {   //Still palindromic, continue traversal
             start++;
             end--;
         }
@@ -225,6 +231,7 @@ bool isPalindrome(const char s[]) { //Determine if an array of characters is a p
             isPalindrome = false;
         }
     }
+    free(str);
     return isPalindrome;
 }
 
