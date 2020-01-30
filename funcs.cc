@@ -77,8 +77,6 @@ uint32_t lcm(uint32_t a, uint32_t b) {
 	return (a*b)/gcd(a,b);
 }
 
-double fact(uint32_t n);
-
 uint64_t sum(uint32_t n)
 {
 	uint64_t s = 0;
@@ -98,7 +96,7 @@ double fact(uint32_t n)
 	return n*fact(n-1);
 
 }
-uint64_t sum(uint32_t n);
+
 double hypot(double a, double b){
 	double c = sqrt(a*a+b*b);
 	return c;
@@ -145,10 +143,6 @@ double area(double x1, double y1, double x2, double y2, double x3, double y3)
 		area = area * -1;
 	return area;
 }
-double area(double x1, double y1,
-						double x2, double y2,
-						double x3, double y3,
-						double x4, double y4);
 double area(double x1, double y1,
 						double x2, double y2,
 						double x3, double y3,
@@ -218,8 +212,6 @@ int min(int x[], int n)
 			min = x[i];
 	return min;
 }
-
-int max(int x[], int n);
 int max(int x[], int n)
 {
     int m = x[0];
