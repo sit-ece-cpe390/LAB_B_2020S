@@ -48,7 +48,15 @@ double fact(uint32_t n)
 uint64_t sum(uint32_t n);
 
 double hypot(double a, double b);
-double diffsq(double a, double b);
+double diffsq(double a, double b) {
+	double squarea = 0;
+	double squareb = 0;
+	double diffsq = 0;
+	squarea = a * a;
+	squareb = b * b;
+	diffsq = squarea - squareb;
+	return diffsq;
+}
 double mean(int a, int b);
 double mean(int a, int b, int c);
 bool pythagoreantriple(double a, double b);
@@ -142,7 +150,14 @@ int max(int x[], int n)
 double prod(int x[], int n);
 int sum(int x[], int n);
 void demean(double x[], int n);
-void normalize(double x[], int n);
+void normalize(double x[], int n) {
+	for (int i = 0, i < n, i++) {
+		double dm = demean(x[i], n);
+		double mm = mean(x[], n);
+		double normal = dm / mm;
+		x[i] = normal;
+	}
+}
 void round(double x[], int n);
 void square(double x[], int n)
 {
