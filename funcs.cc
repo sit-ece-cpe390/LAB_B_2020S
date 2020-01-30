@@ -65,7 +65,11 @@ void swap() { //matt gaughan
 	a = b;
 	b = c;
 }
-uint32_t gcd(uint32_t a, uint32_t b);
+uint32_t gcd(uint32_t a, uint32_t b){//Matthew Jaworski
+ if (a == 0) 
+        return b; 
+    return gcd(b % a, a); 
+}
 
 
 
@@ -275,7 +279,17 @@ uint32_t strip(double x[], uint32_t n, double a, double b) {
 }	
 }
 
-void reverse(int x[], int n);
+void reverse(int x[], int n){//Matthew Jaworski
+int j=0;
+  int reversed[n];
+  for(int i =n-1; i >=0;i--){
+    reversed[j] = x[i];
+    j++;
+  }
+  for (int i=0; i< n; i++){
+    x[i]=reversed[i];
+  }
+}
 uint32_t randomElement(int element[], int n) { //matt gaughan
 		int random = rand() % (n-1);
 		return element[random];
