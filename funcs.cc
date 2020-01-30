@@ -18,7 +18,26 @@ uint64_t prod(uint32_t a, uint32_t b){ // Elizabeth Cone
 	return a*b;
 }
 uint32_t sumsq(uint32_t a, uint32_t b);
-uint32_t countPrimes(uint32_t a, uint32_t b);
+uint32_t countPrimes(uint32_t a, uint32_t b){
+    uint32_t count=0;
+    int prime=2;
+    if (a>b){
+        cout<<"ERROR: The first input number should be smaller than the second one"<<endl;
+    }else{
+        for(int i=a;i<=b;i++){
+            for(int j=1;j<=i;j++){
+                if(i%j==0){
+                    prime--;
+                }
+            }
+            if(prime==0){
+                count+=1;
+            }
+            prime=2;
+        }
+    }
+    return count;
+}
 bool isPrime(uint32_t p);
 void swap(uint32_t& a, uint32_t& b);
 uint32_t gcd(uint32_t a, uint32_t b);
@@ -48,6 +67,7 @@ double fact(uint32_t n)
 {
 	if(n<2)return 1;
 	return n*fact(n-1);
+
 }
 uint64_t sum(uint32_t n);
 double hypot(double a, double b){
@@ -65,6 +85,7 @@ double diffsq(double a, double b) {
 	diffsq = squarea - squareb;
 	return diffsq;
 }
+
 double mean(int a, int b);
 double mean(int a, int b, int c);
 bool pythagoreantriple(double a, double b);
