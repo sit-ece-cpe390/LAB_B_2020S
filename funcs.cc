@@ -79,7 +79,13 @@ public:
 
 double dot(Vec3d v1, Vec3d v2);
 
-Vec3d cross(Vec3d v1, Vec3d v2);
+Vec3d cross(Vec3d v1, Vec3d v2)
+{
+	Vec3d res(v1.y*v2.z-v1.z*v2.y,
+		  v1.z*v2.x-v1.x*v2.z,
+		  v1.x*v2.y-v1.y*v2.x);
+	return res;
+}
 
 double grav(double m1, Vec3d v1, double m2, Vec3d v2);
 
