@@ -9,7 +9,12 @@
 #include <cstdint>
 #include <math.h>
 using namespace std;
-uint32_t sum(uint32_t a, uint32_t b);
+uint32_t sum(uint32_t a, uint32_t b); //E.J. Hannah
+
+uint32_t sum(uint32_t a, uint32_t b) { //Returns the sum of two ints
+    return a + b; //Adds the two integers
+}
+
 uint64_t prod(uint32_t a, uint32_t b);
 uint32_t sumsq(uint32_t a, uint32_t b);
 uint32_t countPrimes(uint32_t a, uint32_t b);
@@ -107,7 +112,24 @@ void addToEach(int x[], int n, int delta);
 
 void removeVowels(char s[]);
 void reverse(char s[]);
-bool isPalindrome(const char s[]);
+bool isPalindrome(const char s[]); //E.J. Hannah
+
+bool isPalindrome(const char s[]) { //Determine if an array of characters is a palindrome
+    int start = 0;  //Flag the beginning
+    int end = sizeof(s) - 2;    //And end of the array
+    bool isPalindrome = true;
+    while (start < end && isPalindrome) {   //Continue until each character has been compared or it is not palindromic
+        if (s[start] == s[end]) {   //Still palindromic, continue traversal
+            start++;
+            end--;
+        }
+        else {  //Not a palindrome
+            isPalindrome = false;
+        }
+    }
+    return isPalindrome;
+}
+
 uint32_t checksum(const char s[]);
 uint32_t myhash(const char s[]);
 void lowercase(char s[]);
