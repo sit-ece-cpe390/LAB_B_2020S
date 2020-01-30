@@ -169,8 +169,11 @@ void reverse(char s[]);
 bool isPalindrome(const char s[]); //E.J. Hannah
 
 bool isPalindrome(const char s[]) { //Determine if an array of characters is a palindrome
-    int start = 0;  //Flag the beginning
-    int end = sizeof(s) - 2;    //And end of the array
+    int len;
+    for (len = 0; s[len] != '\0'; len++) {  //Find the length of the array
+    }
+    int start = 0;
+    int end = len - 1;
     bool isPalindrome = true;
     while (start < end && isPalindrome) {   //Continue until each character has been compared or it is not palindromic
         if (s[start] == s[end]) {   //Still palindromic, continue traversal
