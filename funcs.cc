@@ -7,6 +7,7 @@
 */
 #include <iostream>
 #include <cstdint>
+#include <math.h>
 using namespace std;
 uint32_t sum(uint32_t a, uint32_t b);
 uint64_t prod(uint32_t a, uint32_t b);
@@ -16,7 +17,11 @@ bool isPrime(uint32_t p);
 void swap(uint32_t& a, uint32_t& b);
 uint32_t gcd(uint32_t a, uint32_t b);
 uint32_t lcm(uint32_t a, uint32_t b);
-double fact(uint32_t n);
+double fact(uint32_t n)
+{
+	if(n<2)return 1;
+	return n*fact(n-1);
+}
 uint64_t sum(uint32_t n);
 double hypot(double a, double b);
 double diffsq(double a, double b);
@@ -81,7 +86,13 @@ void demean(double x[], int n);
 void normalize(double x[], int n);
 void round(double x[], int n);
 void square(double x[], int n);
-void squareRoot(double x[], int n);
+void squareRoot(double x[], int n)
+{
+	for(int i=0;i<n;i++)
+	{
+		x[i]=sqrt(x[i]);
+	}
+}
 uint32_t strip(double x[], uint32_t n, double a, double b);
 void reverse(int x[], int n);
 uint32_t randomElement(const int x[], int n);
