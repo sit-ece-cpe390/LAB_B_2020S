@@ -46,7 +46,7 @@ double fact(uint32_t n)
 uint64_t sum(uint32_t n);
 <<<<<<< HEAD
 double hypot(double a, double b){
-	double c = squareRoot(a^2+b^2);
+	double c = sqrt(a*a+b*b);
 	return c;
 }
 double diffsq(double a, double b);
