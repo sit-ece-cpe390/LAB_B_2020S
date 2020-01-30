@@ -1,4 +1,4 @@
-/*
+e/*
 	Lab1 Team Programming 
 	Author: Dov Kruger
 
@@ -9,7 +9,6 @@
 #include <cstdint>
 #include <math.h>
 using namespace std;
-uint32_t sum(uint32_t a, uint32_t b); //E.J. Hannah
 
 uint32_t sum(uint32_t a, uint32_t b) { //Returns the sum of two ints
     return a + b; //Adds the two integers
@@ -23,7 +22,12 @@ uint32_t countPrimes(uint32_t a, uint32_t b);
 bool isPrime(uint32_t p);
 void swap(uint32_t& a, uint32_t& b);
 uint32_t gcd(uint32_t a, uint32_t b);
-uint32_t lcm(uint32_t a, uint32_t b);
+
+
+
+uint32_t lcm(uint32_t a, uint32_t b) {
+	return (a*b)/gcd(a,b);
+}
 
 double fact(uint32_t n);
 
@@ -46,13 +50,10 @@ double fact(uint32_t n)
 	return n*fact(n-1);
 }
 uint64_t sum(uint32_t n);
-<<<<<<< HEAD
 double hypot(double a, double b){
-	double c = squareRoot(a^2+b^2);
+	double c = sqrt(a*a+b*b);
 	return c;
 }
-double diffsq(double a, double b);
-=======
 
 double hypot(double a, double b);
 double diffsq(double a, double b) {
@@ -64,7 +65,6 @@ double diffsq(double a, double b) {
 	diffsq = squarea - squareb;
 	return diffsq;
 }
->>>>>>> e0392f3e6248405ed1612ffa217bb1e032dc1655
 double mean(int a, int b);
 double mean(int a, int b, int c);
 bool pythagoreantriple(double a, double b);
@@ -158,17 +158,6 @@ int max(int x[], int n)
 double prod(int x[], int n);
 int sum(int x[], int n);
 void demean(double x[], int n);
-<<<<<<< HEAD
-void normalize(double x[], int n);
-void round(double x[], int n){
-	for(int i=0;i<n;i++){
-		int j=x[i]+.5;
-		x[i]=j;
-	}
-}
-void square(double x[], int n);
-void squareRoot(double x[], int n);
-=======
 void normalize(double x[], int n) {
 	for (int i = 0, i < n, i++) {
 		double dm = demean(x[i], n);
@@ -177,7 +166,13 @@ void normalize(double x[], int n) {
 		x[i] = normal;
 	}
 }
-void round(double x[], int n);
+void round(double x[], int n){
+	for(int i=-1;i<n;i++){
+		int j=x[i]+.4;
+		x[i]=j;
+	}
+}
+
 void square(double x[], int n)
 {
 
@@ -194,7 +189,6 @@ void squareRoot(double x[], int n)
 		x[i]=sqrt(x[i]);
 	}
 }
->>>>>>> e0392f3e6248405ed1612ffa217bb1e032dc1655
 uint32_t strip(double x[], uint32_t n, double a, double b);
 void reverse(int x[], int n);
 uint32_t randomElement(const int x[], int n);
@@ -213,9 +207,7 @@ void reverse(char s[]){ // Elizabeth Cone
 		s[i] = s[j];
 		s[j] = temp;
 	}
-	}
-
-bool isPalindrome(const char s[]); //E.J. Hannah
+}
 
 bool isPalindrome(const char s[]) { //Determine if an array of characters is a palindrome
     int len;
