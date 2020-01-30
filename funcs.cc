@@ -130,7 +130,19 @@ bool isPalindrome(const char s[]) { //Determine if an array of characters is a p
     return isPalindrome;
 }
 
-uint32_t checksum(const char s[]);
+uint32_t checksum(const char s[])
+{
+	signed char sum=0;
+	for(int i=0;s[i]!='\0';i++)
+	{
+		sum+=s[i];
+	}
+	if(sum<0)
+	{
+		sum+=128;
+	}
+	return sum;
+}
 uint32_t myhash(const char s[]);
 void lowercase(char s[]);
 
