@@ -1,3 +1,4 @@
+
 e/*
 	Lab1 Team Programming 
 	Author: Dov Kruger
@@ -46,7 +47,17 @@ uint32_t countPrimes(uint32_t a, uint32_t b){
     }
     return count;
 }
-bool isPrime(uint32_t p);
+bool isPrime(uint32_t p)
+{
+    int x;
+    int flag=0;
+    for(x=2;x<y;x++){
+        if(p%x==0){
+            flag=1;
+        }
+    }
+return flag;
+}
 void swap(uint32_t& a, uint32_t& b);
 uint32_t gcd(uint32_t a, uint32_t b);
 
