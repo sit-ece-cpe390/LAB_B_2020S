@@ -15,7 +15,9 @@ uint32_t sum(uint32_t a, uint32_t b) { //Returns the sum of two ints
     return a + b; //Adds the two integers
 }
 
-uint64_t prod(uint32_t a, uint32_t b);
+uint64_t prod(uint32_t a, uint32_t b){ // Elizabeth Cone
+	return a*b;
+}
 uint32_t sumsq(uint32_t a, uint32_t b);
 uint32_t countPrimes(uint32_t a, uint32_t b);
 bool isPrime(uint32_t p);
@@ -165,7 +167,19 @@ uint32_t countEvens(const int x[], int n);
 void addToEach(int x[], int n, int delta);
 
 void removeVowels(char s[]);
-void reverse(char s[]);
+
+void reverse(char s[]){ // Elizabeth Cone
+	int len;
+	for (len = 0; s[len] != '\0'; len++)
+		;
+	int j = len-1;
+	for (int i = 0; i < j; i++, j--){
+		char temp = s[i];
+		s[i] = s[j];
+		s[j] = temp;
+	}
+	}
+
 bool isPalindrome(const char s[]); //E.J. Hannah
 
 bool isPalindrome(const char s[]) { //Determine if an array of characters is a palindrome
