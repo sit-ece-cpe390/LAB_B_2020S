@@ -94,8 +94,21 @@ double diffsq(double a, double b) {
 	return diffsq;
 }
 
-double mean(int a, int b);
-double mean(int a, int b, int c);
+double mean(int a, int b){
+	double x=a;
+	double y=b;
+	double avg=0;
+	avg = (x+y)/2;
+	return avg;
+}
+double mean(int a, int b, int c){
+	double x=a;
+	double y=b;
+	double z=c;
+	double avg=0;
+	avg = (x+y+z)/3;
+	return avg;
+}
 bool pythagoreantriple(double a, double b);
 double trigIdentity(double x);
 /*
@@ -186,7 +199,19 @@ int max(int x[], int n)
 
 double prod(int x[], int n);
 int sum(int x[], int n);
-void demean(double x[], int n);
+void demean(double x[], int n){
+	double sum=0;
+	double avg=0;
+	double num=n;
+	for(int i=0; i<n;i++){
+		sum = sum + x[i];
+	}
+	avg = sum/num;
+	cout<<avg<<endl;
+	for (int j=0; j<n; j++){
+		x[j] = x[j] - avg;
+	}
+}
 void normalize(double x[], int n) {
 	for (int i = 0, i < n, i++) {
 		double dm = demean(x[i], n);
