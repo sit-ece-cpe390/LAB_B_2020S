@@ -17,7 +17,15 @@ uint32_t sum(uint32_t a, uint32_t b) { //Returns the sum of two ints
 uint64_t prod(uint32_t a, uint32_t b){ // Elizabeth Cone
 	return a*b;
 }
+//Brianna Garland: Squares both values given and then adds them together and retuns that value
 uint32_t sumsq(uint32_t a, uint32_t b);
+{
+	a = a * a;
+	b = b * b;
+	return a + b;
+}
+
+
 uint32_t countPrimes(uint32_t a, uint32_t b){
     uint32_t count=0;
     int prime=2;
@@ -230,7 +238,25 @@ uint32_t randomElement(const int x[], int n);
 uint32_t countEvens(const int x[], int n);
 void addToEach(int x[], int n, int delta);
 
-void removeVowels(char s[]);
+//Brianna Garland: Checks every index and if it is an uppercase or lowercase vowel it replaces it 
+void removeVowels(char s[])
+{
+	int count = 0;
+
+	for (int i = 0; s[i] != '\0'; i++)
+	{
+		if (!(s[i] == 'A' || s[i] == 'E' || s[i] == 'I' || s[i] == 'O' || s[i] == 'U' || s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u'))
+		{
+			s[count] = s[i];
+			count++;
+		}
+	}
+	s[count] = '\0';
+
+
+}
+
+
 
 void reverse(char s[]){ // Elizabeth Cone
 	int len;
