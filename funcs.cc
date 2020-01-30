@@ -92,7 +92,7 @@ double grav(double m1, Vec3d v1, double m2, Vec3d v2);
 
 // array problems
 double mean(int x[], int n);
-<<<<<<< HEAD
+
 int max(int x[], int n);
 
 int min(int x[], int n)
@@ -105,7 +105,7 @@ int min(int x[], int n)
 	return min;
 }
 
-=======
+
 int max(int x[], int n)
 {
     int m = x[0];
@@ -116,7 +116,7 @@ int max(int x[], int n)
     return m;
 }
 int min(int x[], int n);
->>>>>>> 3a6b4322258078271fc9634829331fb7ff5044a8
+
 double prod(int x[], int n);
 int sum(int x[], int n);
 void demean(double x[], int n);
