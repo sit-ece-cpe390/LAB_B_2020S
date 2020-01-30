@@ -142,8 +142,6 @@ int sum(int x[], int n);
 void demean(double x[], int n);
 void normalize(double x[], int n);
 void round(double x[], int n);
-<<<<<<< HEAD
-
 void square(double x[], int n)
 {
 
@@ -153,10 +151,6 @@ void square(double x[], int n)
 	}
 
 }
-
-void squareRoot(double x[], int n);
-=======
-void square(double x[], int n);
 void squareRoot(double x[], int n)
 {
 	for(int i=0;i<n;i++)
@@ -164,7 +158,6 @@ void squareRoot(double x[], int n)
 		x[i]=sqrt(x[i]);
 	}
 }
->>>>>>> feb034abc61ebb3e448fd1a81a9aa4c7fe68c3b1
 uint32_t strip(double x[], uint32_t n, double a, double b);
 void reverse(int x[], int n);
 uint32_t randomElement(const int x[], int n);
@@ -361,4 +354,4 @@ int main() {
 	cout << myhash("hash this!") << '\n';
 	cout << myhash("hash a longer string") << '\n';
 
-
+}
