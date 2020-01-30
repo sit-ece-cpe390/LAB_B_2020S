@@ -14,7 +14,9 @@ uint32_t sum(uint32_t a, uint32_t b) { //Returns the sum of two ints
     return a + b; //Adds the two integers
 }
 
-uint64_t prod(uint32_t a, uint32_t b);
+uint64_t prod(uint32_t a, uint32_t b){ // Elizabeth Cone
+	return a*b;
+}
 uint32_t sumsq(uint32_t a, uint32_t b);
 uint32_t countPrimes(uint32_t a, uint32_t b);
 bool isPrime(uint32_t p);
@@ -156,15 +158,6 @@ int max(int x[], int n)
 double prod(int x[], int n);
 int sum(int x[], int n);
 void demean(double x[], int n);
-<<<<<<< HEAD
-void normalize(double x[], int n);
-void round(double x[], int n);
-void square(double x[], int n);
-void squareRoot(double x[], int n);
-uint32_t strip(double x[], uint32_t n, double a, double b) {
-	
-}
-=======
 void normalize(double x[], int n) {
 	for (int i = 0, i < n, i++) {
 		double dm = demean(x[i], n);
@@ -197,6 +190,7 @@ void squareRoot(double x[], int n)
 	}
 }
 
+
 uint32_t strip(double x[], uint32_t n, double a, double b) {
 	for (int i = 0; i < n; i++){
 		if (x[i] > a || x[i] < b) {
@@ -216,7 +210,18 @@ uint32_t countEvens(const int x[], int n);
 void addToEach(int x[], int n, int delta);
 
 void removeVowels(char s[]);
-void reverse(char s[]);
+
+void reverse(char s[]){ // Elizabeth Cone
+	int len;
+	for (len = 0; s[len] != '\0'; len++)
+		;
+	int j = len-1;
+	for (int i = 0; i < j; i++, j--){
+		char temp = s[i];
+		s[i] = s[j];
+		s[j] = temp;
+	}
+}
 
 bool isPalindrome(const char s[]) { //Determine if an array of characters is a palindrome
     int len;
