@@ -1,5 +1,5 @@
 /*
-	Lab1 Team Programming 
+ii:ii	Lab1 Team Programming 
 	Author: Dov Kruger
 
 	For a description of each function, see:
@@ -64,7 +64,10 @@ double perimeter(double x1, double y1,
 								 double x4, double y4);
 
 double dot(double v1x, double v1y, double v1z,
-					 double v2x, double v2y, double v2z);
+			double v2x, double v2y, double v2z){
+	double product = v1x * v2x + v1y * v2y + v1z * v2z;
+	return product;
+	}
 void rect2polar(double x, double y, double &r, double &theta);
 void polar2rect(double r, double theta, double &x, double &y);
 
@@ -168,7 +171,54 @@ uint32_t checksum(const char s[])
 	return sum;
 }
 uint32_t myhash(const char s[]);
-void lowercase(char s[]);
+void lowercase(char s[])
+	
+	;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 double taylorSeriesSine(double x);
 double taylorSeriesCosine(double x);
@@ -323,5 +373,8 @@ int main() {
 	cout << myhash("ABC") << '\n'; // (65 * 26 + 66) * 26 + 67
 	cout << myhash("hash this!") << '\n';
 	cout << myhash("hash a longer string") << '\n';
+
+	double res=dot(1, 2, 3, 4, 5, 6);
+	cout << res;
 
 }
