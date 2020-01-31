@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 /*
 ii:ii	Lab1 Team Programming 
+=======
+
+e/*
+	Lab1 Team Programming 
+>>>>>>> 2258ec413b63747879213007f2ba71829de9dd36
 	Author: Dov Kruger
 
 	For a description of each function, see:
@@ -9,29 +15,124 @@ ii:ii	Lab1 Team Programming
 #include <cstdint>
 #include <math.h>
 using namespace std;
-uint32_t sum(uint32_t a, uint32_t b); //E.J. Hannah
 
 uint32_t sum(uint32_t a, uint32_t b) { //Returns the sum of two ints
     return a + b; //Adds the two integers
 }
 
-uint64_t prod(uint32_t a, uint32_t b);
+uint64_t prod(uint32_t a, uint32_t b){ // Elizabeth Cone
+	return a*b;
+}
+//Brianna Garland: Squares both values given and then adds them together and retuns that value
 uint32_t sumsq(uint32_t a, uint32_t b);
-uint32_t countPrimes(uint32_t a, uint32_t b);
-bool isPrime(uint32_t p);
-void swap(uint32_t& a, uint32_t& b);
-uint32_t gcd(uint32_t a, uint32_t b);
-uint32_t lcm(uint32_t a, uint32_t b);
+{
+	a = a * a;
+	b = b * b;
+	return a + b;
+}
+
+
+uint32_t countPrimes(uint32_t a, uint32_t b){
+    uint32_t count=0;
+    int prime=2;
+    if (a>b){
+        cout<<"ERROR: The first input number should be smaller than the second one"<<endl;
+    }else{
+        for(int i=a;i<=b;i++){
+            for(int j=1;j<=i;j++){
+                if(i%j==0){
+                    prime--;
+                }
+            }
+            if(prime==0){
+                count+=1;
+            }
+            prime=2;
+        }
+    }
+    return count;
+}
+bool isPrime(uint32_t p)
+{
+    int x;
+    int flag=0;
+    for(x=2;x<y;x++){
+        if(p%x==0){
+            flag=1;
+        }
+    }
+return flag;
+}
+void swap() { //matt gaughan
+	int a = 2, b = 3, c;
+	cout << "Before swapping, a = " << a << " and b = " << b << endl;
+	c = a;
+	a = b;
+	b = c;
+}
+uint32_t gcd(uint32_t a, uint32_t b){//Matthew Jaworski
+ if (a == 0) 
+        return b; 
+    return gcd(b % a, a); 
+}
+
+
+
+uint32_t lcm(uint32_t a, uint32_t b) {
+	return (a*b)/gcd(a,b);
+}
+
+uint64_t sum(uint32_t n)
+{
+	uint64_t s = 0;
+	for (int i = 0; i <= n; i++)
+	{
+		s = s + i;
+	}
+
+	return s;
+}
+	
+
+
 double fact(uint32_t n)
 {
 	if(n<2)return 1;
 	return n*fact(n-1);
+
 }
-uint64_t sum(uint32_t n);
+
+double hypot(double a, double b){
+	double c = sqrt(a*a+b*b);
+	return c;
+}
+
 double hypot(double a, double b);
-double diffsq(double a, double b);
-double mean(int a, int b);
-double mean(int a, int b, int c);
+double diffsq(double a, double b) {
+	double squarea = 0;
+	double squareb = 0;
+	double diffsq = 0;
+	squarea = a * a;
+	squareb = b * b;
+	diffsq = squarea - squareb;
+	return diffsq;
+}
+
+double mean(int a, int b){
+	double x=a;
+	double y=b;
+	double avg=0;
+	avg = (x+y)/2;
+	return avg;
+}
+double mean(int a, int b, int c){
+	double x=a;
+	double y=b;
+	double z=c;
+	double avg=0;
+	avg = (x+y+z)/3;
+	return avg;
+}
 bool pythagoreantriple(double a, double b);
 double trigIdentity(double x);
 /*
@@ -47,21 +148,29 @@ double area(double x1, double y1, double x2, double y2, double x3, double y3)
 		area = area * -1;
 	return area;
 }
-
-
 double area(double x1, double y1,
 						double x2, double y2,
 						double x3, double y3,
 						double x4, double y4)
 {
-     return (  (x1 * y2 - x2 * y1) + (x2 * y3 - x3 * y2) + (x3 * y4 - x4 * y3) + (x4 * y1 - x1 * y4)  ) / 2;
+     double area = (  (x1 * y2 - x2 * y1) + (x2 * y3 - x3 * y2) + (x3 * y4 - x4 * y3) + (x4 * y1 - x1 * y4)  ) / 2;
+     if (area < 0)
+	area *= -1;
+     return area;
 }
 double perimeter(double x1, double y1, double x2, double y2, double x3, double y3);
 
 double perimeter(double x1, double y1,
 								 double x2, double y2,
 								 double x3, double y3,
-								 double x4, double y4);
+								 double x4, double y4); //Irakli Okruashvili
+{
+	double side1 = sqrt((x2-x1)^2+(y2-y1)^2);
+	double side2 = sqrt((x3-x2)^2+(y3-y2)^2);
+	double side3 = sqrt((x4-x3)^2+(y4-y3)^2);
+	double side4 = sqrt((x1-x4)^2+(y1-y4)^2);
+	return (side1+side2+side3+side4);
+}
 
 double dot(double v1x, double v1y, double v1z,
 			double v2x, double v2y, double v2z){
@@ -94,8 +203,13 @@ double grav(double m1, Vec3d v1, double m2, Vec3d v2);
 
 
 // array problems
-double mean(int x[], int n);
-
+double mean(int x[], int n); //Irakli Okruashvili
+{
+	double sum;
+	for(int i = 0; i < n; i++)
+		sum += x[i];
+	return sum / n;
+}
 
 int min(int x[], int n)
 {
@@ -106,8 +220,6 @@ int min(int x[], int n)
 			min = x[i];
 	return min;
 }
-
-
 int max(int x[], int n)
 {
     int m = x[0];
@@ -120,10 +232,43 @@ int max(int x[], int n)
 
 double prod(int x[], int n);
 int sum(int x[], int n);
-void demean(double x[], int n);
-void normalize(double x[], int n);
-void round(double x[], int n);
-void square(double x[], int n);
+void demean(double x[], int n){
+	double sum=0;
+	double avg=0;
+	double num=n;
+	for(int i=0; i<n;i++){
+		sum = sum + x[i];
+	}
+	avg = sum/num;
+	cout<<avg<<endl;
+	for (int j=0; j<n; j++){
+		x[j] = x[j] - avg;
+	}
+}
+void normalize(double x[], int n) {
+	for (int i = 0, i < n, i++) {
+		double dm = demean(x[i], n);
+		double mm = mean(x[], n);
+		double normal = dm / mm;
+		x[i] = normal;
+	}
+}
+void round(double x[], int n){
+	for(int i=-1;i<n;i++){
+		int j=x[i]+.4;
+		x[i]=j;
+	}
+}
+
+void square(double x[], int n)
+{
+
+	for (int i = 0; i < n; i++)
+	{
+		x[i] = x[i] * x[i];
+	}
+
+}
 void squareRoot(double x[], int n)
 {
 	for(int i=0;i<n;i++)
@@ -131,22 +276,91 @@ void squareRoot(double x[], int n)
 		x[i]=sqrt(x[i]);
 	}
 }
-uint32_t strip(double x[], uint32_t n, double a, double b);
-void reverse(int x[], int n);
-uint32_t randomElement(const int x[], int n);
-uint32_t countEvens(const int x[], int n);
-void addToEach(int x[], int n, int delta);
 
-void removeVowels(char s[]);
-void reverse(char s[]);
-bool isPalindrome(const char s[]); //E.J. Hannah
+
+uint32_t strip(double x[], uint32_t n, double a, double b) {
+	for (int i = 0; i < n; i++){
+		if (x[i] > a || x[i] < b) {
+			for (int j=i; j,(n-1);j++){
+				x[j]=x[j+1];
+			}
+		n++;
+		break;
+	}
+	return sizeof(x[])/sizeof(x[0];
+}	
+}
+
+void reverse(int x[], int n){//Matthew Jaworski
+int j=0;
+  int reversed[n];
+  for(int i =n-1; i >=0;i--){
+    reversed[j] = x[i];
+    j++;
+  }
+  for (int i=0; i< n; i++){
+    x[i]=reversed[i];
+  }
+}
+uint32_t randomElement(int element[], int n) { //matt gaughan
+		int random = rand() % (n-1);
+		return element[random];
+	}
+uint32_t countEvens(const int x[], int n);
+void addToEach(int x[], int n, int delta)
+{
+    for (int i=0;i<=n-1;i++){
+        x[i]+=delta;
+    }
+}
+
+//Brianna Garland: Checks every index and if it is an uppercase or lowercase vowel it replaces it 
+void removeVowels(char s[])
+{
+	int count = 0;
+
+	for (int i = 0; s[i] != '\0'; i++)
+	{
+		if (!(s[i] == 'A' || s[i] == 'E' || s[i] == 'I' || s[i] == 'O' || s[i] == 'U' || s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u'))
+		{
+			s[count] = s[i];
+			count++;
+		}
+	}
+	s[count] = '\0';
+
+
+}
+
+
+
+void reverse(char s[]){ // Elizabeth Cone
+	int len;
+	for (len = 0; s[len] != '\0'; len++)
+		;
+	int j = len-1;
+	for (int i = 0; i < j; i++, j--){
+		char temp = s[i];
+		s[i] = s[j];
+		s[j] = temp;
+	}
+}
 
 bool isPalindrome(const char s[]) { //Determine if an array of characters is a palindrome
-    int start = 0;  //Flag the beginning
-    int end = sizeof(s) - 2;    //And end of the array
+    int len;
+    char *str = (char*)malloc(256); //New array for once whitespaces are removed
+    for (int i = 0; s[i] != '\0'; i++) {    //Traverse array to find length and remove whitespace characters
+        if(s[i]!=' '){
+            str[len]=s[i];
+            len++;
+        }
+    }
+    str[len]='\0';
+    int start = 0;
+    int end = len - 1;
     bool isPalindrome = true;
     while (start < end && isPalindrome) {   //Continue until each character has been compared or it is not palindromic
-        if (s[start] == s[end]) {   //Still palindromic, continue traversal
+        if (str[start] == str[end]) {   //Still palindromic, continue traversal
             start++;
             end--;
         }
@@ -154,6 +368,7 @@ bool isPalindrome(const char s[]) { //Determine if an array of characters is a p
             isPalindrome = false;
         }
     }
+    free(str);
     return isPalindrome;
 }
 
