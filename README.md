@@ -9,3 +9,6 @@
 LAB5:
 
 https://web.stanford.edu/class/cs193d/handouts/make.pdf
+
+LAB6:
+https://docs.google.com/presentation/d/180o0XnH33kmeIYAXK2gQHvnkqB4T2oOOJoNs3EcNDx8/edit?usp=sharing
