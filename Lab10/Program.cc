@@ -1,3 +1,5 @@
+
+// the linkage to an assembly routine
 extern int setBit(int a, int b);
 extern int clearBit(int a, int b);
 extern int flip(int a, int b);
