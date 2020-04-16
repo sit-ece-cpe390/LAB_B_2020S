@@ -1,13 +1,15 @@
 
-// the linkage to an assembly routine
-extern int setBit(int a, int b);
-extern int clearBit(int a, int b);
-extern int flip(int a, int b);
-extern int replaceBits(int a, int b, int c);
-extern int buildColor(int r, int g, int b);
+// Write in ARM Assembly
+int setBit(int a, int b);
+int clearBit(int a, int b);
+int flip(int a, int b);
+int replaceBits(int a, int b, int c);
+int buildColor(int r, int g, int b);
+//
+// Write in C++
 double choose(int a, int b){
 
-//Write your c++ code for choose
+// your c++ code for choose
 
 }
 
