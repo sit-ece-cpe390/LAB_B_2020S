@@ -3,7 +3,11 @@ extern int clearBit(int a, int b);
 extern int flip(int a, int b);
 extern int replaceBits(int a, int b, int c);
 extern int buildColor(int r, int g, int b);
-extern double choose(int a, int b);
+double choose(int a, int b){
+
+//Write your c++ code for choose
+
+}
 
 int main() {
 	int answer = setBit(5, 8);
